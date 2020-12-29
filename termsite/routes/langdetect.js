@@ -3,7 +3,7 @@ var router = express.Router();
 const detectLang = require("@haileybot/language-detector");
 
 router.get('/', function(req, res, next) {
-  res.send(detectLang(req.query.text));
+  res.jsonp({ lang: detectLang(req.query.text) })
 });
 
 module.exports = router;
