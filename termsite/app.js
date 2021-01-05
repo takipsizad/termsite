@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var Langdetecter = require('./routes/langdetect');
 var st = require('./routes/st');
-var mcstatus = require('./routes/mcserverstatus');
+var useragent = require('./routes/useragent')
 var port = '3000'
 
 var app = express();
@@ -25,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/langdetect', Langdetecter);
 app.use('/api/st', st);
-app.use('/api/mcstatus', mcstatus);
+app.use('/api/ua', useragent);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

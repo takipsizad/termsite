@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const {getStatus}  = require("mc-server-status")
-
-
+var useragent = require('express-useragent');
+router.use(useragent.express());
 router.get('/', function(req, res, next) {
-  res.jsonp({ status: getStatus(req.query.ip) })
+  res.jsonp({ ua: req.useragent })
 });
 
 module.exports = router;
