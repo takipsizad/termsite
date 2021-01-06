@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var Langdetecter = require('./routes/langdetect');
 var st = require('./routes/st');
 var useragent = require('./routes/useragent')
+var svversion = require('./routes/serverversion');
 var port = '3000'
 
 var app = express();
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/api/langdetect', Langdetecter);
 app.use('/api/st', st);
 app.use('/api/ua', useragent);
+app.use('/api/serverversion', svversion);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
