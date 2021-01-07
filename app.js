@@ -9,6 +9,7 @@ var Langdetecter = require('./routes/langdetect');
 var st = require('./routes/st');
 var useragent = require('./routes/useragent')
 var svversion = require('./routes/serverversion');
+var randommessage = require('./routes/randommessage');
 var port = '3000'
 
 var app = express();
@@ -28,6 +29,7 @@ app.use('/api/langdetect', Langdetecter);
 app.use('/api/st', st);
 app.use('/api/ua', useragent);
 app.use('/api/serverversion', svversion);
+app.use('/api/randommessage', randommessage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,7 +44,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',{title:'error'})
 });
 app.listen(port, () => {
   console.log(`listening at http://localhost:${port}`)
