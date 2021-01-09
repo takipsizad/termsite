@@ -10,6 +10,7 @@ var st = require('./routes/st');
 var useragent = require('./routes/useragent')
 var svversion = require('./routes/serverversion');
 var randommessage = require('./routes/randommessage');
+var docs = require('./routes/docs');
 var port =  '3000'
 
 var app = express();
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/langdetect', Langdetecter);
+app.use('/docs', docs)
 app.use('/api/st', st);
 app.use('/api/ua', useragent);
 app.use('/api/serverversion', svversion);
