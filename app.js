@@ -11,6 +11,7 @@ var useragent = require('./routes/useragent')
 var svversion = require('./routes/serverversion');
 var randommessage = require('./routes/randommessage');
 var docs = require('./routes/docs');
+var serverinfo = require('./routes/serverinfo');
 var port =  '3000'
 
 var app = express();
@@ -32,6 +33,7 @@ app.use('/api/st', st);
 app.use('/api/ua', useragent);
 app.use('/api/serverversion', svversion);
 app.use('/api/randommessage', randommessage);
+app.use('/serverinfo', serverinfo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
