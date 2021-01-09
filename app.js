@@ -10,7 +10,7 @@ var st = require('./routes/st');
 var useragent = require('./routes/useragent')
 var svversion = require('./routes/serverversion');
 var randommessage = require('./routes/randommessage');
-var port = '3000'
+var port =  '3000'
 
 var app = express();
 
