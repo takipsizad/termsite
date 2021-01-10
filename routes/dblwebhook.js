@@ -1,23 +1,19 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 router.use(bodyParser.json())
 router.use(express.json());
-require('dotenv').config()
+require('dotenv').config();
+const webhook = process.env.webhook
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook(webhook);
+
 router.get('/', function(req, res) {
     res.send('working')
 })
-router.post('/', function(req, res, next) {
-    if (req.headers.authorization == process.env.secret) {
-    const hook = new Webhook(process.env.webhook); 
-    const embed = new MessageBuilder()
-    .setTitle('<@',req.body.user,'>')
-    .addField('this user voted thanks')
-    .setColor('#00b0f4')
-    .setTimestamp();
-    hook.send(embed);;
-        }
-
-});
+router.post('/', function(req, res) {
+	res.send('xd')
+	hook.send("thanks for voting us on top gg",'<@',req.body.user,'>');
+})
 
 module.exports = router;

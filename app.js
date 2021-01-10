@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
+require('dotenv').config()
 var Langdetecter = require('./routes/langdetect');
 var st = require('./routes/st');
 var useragent = require('./routes/useragent')
@@ -13,6 +14,7 @@ var docs = require('./routes/docs');
 var serverinfo = require('./routes/serverinfo');
 var funding = require('./routes/funding');
 var dblwebhook = require('./routes/dblwebhook');
+
 var port =  '3000'
 
 var app = express();
