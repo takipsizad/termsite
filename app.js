@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var Langdetecter = require('./routes/langdetect');
 var st = require('./routes/st');
@@ -13,6 +12,7 @@ var randommessage = require('./routes/randommessage');
 var docs = require('./routes/docs');
 var serverinfo = require('./routes/serverinfo');
 var funding = require('./routes/funding');
+var dblwebhook = require('./routes/dblwebhook');
 var port =  '3000'
 
 var app = express();
@@ -36,6 +36,7 @@ app.use('/api/serverversion', svversion);
 app.use('/api/randommessage', randommessage);
 app.use('/serverinfo', serverinfo);
 app.use('/funding', funding);
+app.use('/api/dblwebhook', dblwebhook);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
