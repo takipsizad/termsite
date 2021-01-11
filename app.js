@@ -14,6 +14,7 @@ var docs = require('./routes/docs');
 var serverinfo = require('./routes/serverinfo');
 var funding = require('./routes/funding');
 var dblwebhook = require('./routes/dblwebhook');
+var favicon = require('./routes/favicon');
 
 var port =  '3000'
 
