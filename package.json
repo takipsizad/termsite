@@ -17,6 +17,7 @@
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
     "morgan": "~1.9.1",
-    "random-choice": "^1.0.0"
+    "random-choice": "^1.0.0",
+    "serve-favicon": "^2.5.0"
   }
 }

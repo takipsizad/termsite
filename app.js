@@ -28,7 +28,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
 app.use('/api/langdetect', Langdetecter);
 app.use('/docs', docs)
@@ -39,6 +38,9 @@ app.use('/api/randommessage', randommessage);
 app.use('/serverinfo', serverinfo);
 app.use('/funding', funding);
 app.use('/api/dblwebhook', dblwebhook);
+var favicon = require('serve-favicon');
+
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
