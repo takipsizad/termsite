@@ -30,6 +30,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   if (req.headers.authorization == process.env.secret) {
 	res.send('xd')
+	console.log(req.body.user)
 const user = req.body.user
 const embed = new MessageBuilder()
 .setTitle('thanks for voting')
