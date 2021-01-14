@@ -14,6 +14,7 @@ var docs = require('./routes/docs');
 var serverinfo = require('./routes/serverinfo');
 var funding = require('./routes/funding');
 var dblwebhook = require('./routes/dblwebhook');
+var download = require('./routes/download');
 var favicon = require('./routes/favicon');
 
 var port =  '3000'
@@ -40,6 +41,7 @@ app.use('/serverinfo', serverinfo);
 app.use('/funding', funding);
 app.use('/api/dblwebhook', dblwebhook);
 app.use('/favicon.ico', favicon)
+app.use('/download', download);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
