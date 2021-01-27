@@ -16,6 +16,7 @@ var funding = require('./routes/funding');
 var dblwebhook = require('./routes/dblwebhook');
 var download = require('./routes/download');
 var favicon = require('./routes/favicon');
+var status = require('./routes/status')
 
 var port =  '3000'
 
@@ -43,7 +44,7 @@ app.use('/funding', funding);
 app.use('/api/dblwebhook', dblwebhook);
 app.use('/favicon.ico', favicon)
 app.use('/download', download);
-app.use(require('express-status-monitor')());
+app.use('/status', status);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
