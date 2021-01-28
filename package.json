@@ -14,6 +14,8 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.16.4",
+    "express-rate-limit": "^5.2.3",
+    "express-slow-down": "^1.4.0",
     "express-subdomain": "^1.0.5",
     "express-useragent": "^1.0.15",
     "http-errors": "~1.6.3",

@@ -17,11 +17,23 @@ var dblwebhook = require('./routes/dblwebhook');
 var download = require('./routes/download');
 var favicon = require('./routes/favicon');
 var status = require('./routes/status')
+var RateLimit = require('express-rate-limit');
+const slowDown = require("express-slow-down");
+var limiter = new RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minute
+  max: 200
+});
+const speedLimiter = slowDown({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  delayAfter:50 ,
+  delayMs: 500
+});
 
 var port =  '3000'
 
 var app = express();
-
+app.use(limiter);
+app.use(speedLimiter);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
