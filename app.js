@@ -19,6 +19,7 @@ var favicon = require('./routes/favicon');
 var status = require('./routes/status')
 var RateLimit = require('express-rate-limit');
 const slowDown = require("express-slow-down");
+var discordinv = require('./routes/discordinv');
 var limiter = new RateLimit({
   windowMs: 15 * 60 * 1000, // 15 minute
   max: 200
@@ -57,6 +58,7 @@ app.use('/api/dblwebhook', dblwebhook);
 app.use('/favicon.ico', favicon)
 app.use('/download', download);
 app.use('/status', status);
+app.use('/api/discordinv', discordinv)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
