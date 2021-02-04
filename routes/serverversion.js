@@ -6,10 +6,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 router.get('/', function(req, res, next) {
-    res.jsonp({ serverversion: '0.0.3'  })
+    res.jsonp({ serverversion: '0.0.5'  })
 });
 
-
 module.exports = router;
-// add router in the Express app.
-app.use("/", router);
